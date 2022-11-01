@@ -14,21 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('prints.repayments');
-
-    $view = view('prints.repayments')
-        ->render();
-
-    $pdf = new Pdf($view, "bla");
-
-    return $pdf->download();
-
-});
-
-// Complaints
 // Route::get('/', function () {
-//     $view = view('prints.complaints')
+//     return view('prints.repayments');
+
+//     $view = view('prints.repayments')
 //         ->render();
 
 //     $pdf = new Pdf($view, "bla");
@@ -36,6 +25,18 @@ Route::get('/', function () {
 //     return $pdf->download();
 
 // });
+
+// Complaints
+Route::get('/', function () {
+    return view('prints.complaints');
+    $view = view('prints.complaints')
+        ->render();
+
+    $pdf = new Pdf($view, "bla");
+
+    return $pdf->download();
+
+});
 
 // Investigations
 // Route::get('/', function () {

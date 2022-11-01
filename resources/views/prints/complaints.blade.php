@@ -1,10 +1,10 @@
+@include("prints.pdf")
+
 <style>
     .table-header {
-        width: 100%;
-        font-size: 20px;
-        font-weight: bolder;
+        border: none;
     }
-
+    
     table p {
         font-size: 19px;
     }
@@ -13,24 +13,8 @@
         width: 50%;
     }
 
-    .table-header td:first-child {
-    }
-
     .table-header td:last-child {
         padding-left: 10px;
-    }
-
-    .folha {
-        width: 21cm;
-        height: 29.7cm;
-        padding: 30mm 25.4mm 30mm 25.4mm; 
-        background-color: #fff;
-        border: solid 1px black;
-        box-sizing: content-box;
-    }
-
-    .highlighting {
-        background-color: #ffff00;
     }
 </style>
 

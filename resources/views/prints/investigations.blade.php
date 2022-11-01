@@ -1,12 +1,6 @@
-<style>
-    .table-header {
-        width: 100%;
-        font-size: 20px;
-        font-weight: bolder;
-        border: solid 1px #ccc;
-        border-collapse: collapse;
-    }
+@include("prints.pdf")
 
+<style>
     .table-header tr:first-child td {
         padding-bottom: 10px;
     }
@@ -23,15 +17,8 @@
         width: 50%;
     }
 
-    .table-header td:first-child {
-    }
-
     .table-header td {
         padding-left: 10px;
-    }
-
-    .highlighting {
-        background-color: #ffff00;
     }
 
     .write-space {

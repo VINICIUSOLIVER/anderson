@@ -3,13 +3,6 @@
         font-size: 16px;
     }
 
-    .table-header {
-        width: 100%;
-        font-size: 20px;
-        font-weight: bolder;
-        border-collapse: collapse;
-    }
-
     .table-header tr:first-child td {
         padding-bottom: 10px;
     }
@@ -18,15 +11,8 @@
         width: 50%;
     }
 
-    .table-header td:first-child {
-    }
-
     .table-header td {
         padding-left: 10px;
-    }
-
-    .highlighting {
-        background-color: #ffff00;
     }
 
     .write-space {
@@ -36,7 +22,7 @@
     .check-content {
         display: -webkit-box;
         align-items: center;
-        display: -webkit-flex; /* wkhtmltopdf uses this one */
+        display: -webkit-flex;
         display: flex;
         align-items: center;
     }
@@ -59,7 +45,7 @@
     .space-between {
         display: -webkit-box;
         align-items: center;
-        display: -webkit-flex; /* wkhtmltopdf uses this one */
+        display: -webkit-flex;
         display: flex;
         align-items: center;
         justify-content: space-between
