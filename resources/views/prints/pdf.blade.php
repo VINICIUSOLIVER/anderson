@@ -19,4 +19,16 @@
         border: solid 1px black;
         box-sizing: content-box;
     }
+
+    .write-space {
+        width: 30px;
+    }
+
+    .font-size-small {
+        font-size: 14px
+    }
+
+    .font-weight-bolder {
+        font-weight: bolder !important;
+    }
 </style>

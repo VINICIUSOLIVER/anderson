@@ -21,16 +21,12 @@
         padding-left: 10px;
     }
 
-    .write-space {
-        width: 30px;
-    }
-
 </style>
 
 <table class="table-header">
     <tr>
         <td>
-            {{ $docuemntDate }}
+            {{ $documentDate }}
         </td>
         <td></td>
     </tr>
@@ -129,9 +125,9 @@
                 <br><br>
                 Here are our bank details below for the overpayment to be transferred 
                 <br><br>
-                {{ $bankAccountUsername }}  <br>
-                {{ $bankAccountAgencyNumber }} <br>
-                {{ $bankAccountNumber }} <br><br>
+                {{ $agentName }}  <br>
+                {{ $agentSortCode }} <br>
+                {{ $agentAccountNumber }} <br><br>
                 Kind regards
             </p>
         </td>

@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 // Complaints
 // Route::get('/', function () {
-//     $docuemntDate = (new \DateTime())->format("l, d F Y");
+//     $documentDate = (new \DateTime())->format("l, d F Y");
 //     $companyAddress = "Mr T McNally <br/>
 //                         Tommys Tax <br/>
 //                         Kingfisher House Business Centre <br/>
@@ -48,8 +48,8 @@ use Illuminate\Support\Facades\Route;
 //         "17/05/2022"
 //     ];
 
-    // return view('prints.complaints')->with([
-    //     "documentDate" => $docuemntDate,
+    // return view('prints.complaint_revenue')->with([
+    //     "documentDate" => $documentDate,
     //     "companyAddress" => $companyAddress,
     //     "clientName" => $clientName,
     //     "clientUTR" => $clientUTR,
@@ -58,9 +58,9 @@ use Illuminate\Support\Facades\Route;
     //     "dates" => join($dates, ", ")
     // ]);
 
-    // $view = view('prints.complaints')
+    // $view = view('prints.complaint_revenue')
     //     ->with([
-    //         "documentDate" => $docuemntDate,
+    //         "documentDate" => $documentDate,
     //         "companyAddress" => $companyAddress,
     //         "clientName" => $clientName,
     //         "clientUTR" => $clientUTR,
@@ -75,54 +75,82 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Investigations
-Route::get('/', function () {
-    $docuemntDate = (new \DateTime())->format("l, d F Y");
-    $companyAddress = "Mr T McNally <br/><br/>
-                        Tommys Tax <br/><br/>
-                        Kingfisher House Business Centre <br/>
-                        21-23 Elmfield Way <br/>
-                        BROMLEY <br/><br/>
-                        BR1 1LT";
+// Route::get('/', function () {
+//     $documentDate = (new \DateTime())->format("l, d F Y");
+//     $companyAddress = "Mr T McNally <br/><br/>
+//                         Tommys Tax <br/><br/>
+//                         Kingfisher House Business Centre <br/>
+//                         21-23 Elmfield Way <br/>
+//                         BROMLEY <br/><br/>
+//                         BR1 1LT";
 
-    $clientName = "Maurice Doherty";
-    $clientUTR = "7902735721";
-    $clientREF = "123456789";
+//     $clientName = "Maurice Doherty";
+//     $clientUTR = "7902735721";
+//     $clientREF = "123456789";
 
-    $clientCompanyAddress = "Block 17 Lode Lane, Solihull, B92 8NW";
-    $natureOfBusiness = "Production Operative, overseeing the quality of the finished cars before they are despatched from the site.";
-    $otherExpense = "communication, technical devices broad band, stationary, working from home and specialist health and safety uniform with washing expenses, food when working outside of original hours.";
-    $companyName = "Maurice Doherty";
+//     $clientCompanyAddress = "Block 17 Lode Lane, Solihull, B92 8NW";
+//     $natureOfBusiness = "Production Operative, overseeing the quality of the finished cars before they are despatched from the site.";
+//     $otherExpense = "communication, technical devices broad band, stationary, working from home and specialist health and safety uniform with washing expenses, food when working outside of original hours.";
+//     $companyName = "Maurice Doherty";
 
-    $bankAccountUsername = "Tommys Tax";
-    $bankAccountAgencyNumber = "231470";
-    $bankAccountNumber = "23317400";
+        // $agentName = "My Tax Back ltd";
+        // $agentSortCode = "231470";
+        // $agentAccountNumber = "231470";
 
-    return view('prints.investigations')
-        ->with([
-            "docuemntDate" => $docuemntDate,
-            "companyAddress" => $companyAddress,
-            "clientName" => $clientName,
-            "clientUTR" => $clientUTR,
-            "clientREF" => $clientREF,
-            "clientCompanyAddress" => $clientCompanyAddress,
-            "natureOfBusiness" => $natureOfBusiness,
-            "otherExpense" => $otherExpense,
-            "companyName" => $companyName,
-            "bankAccountUsername" => $bankAccountUsername,
-            "bankAccountAgencyNumber" => $bankAccountAgencyNumber,
-            "bankAccountNumber" => $bankAccountNumber
-        ]);
+//     return view('prints.investigation_expense')
+//         ->with([
+//             "documentDate" => $documentDate,
+//             "companyAddress" => $companyAddress,
+//             "clientName" => $clientName,
+//             "clientUTR" => $clientUTR,
+//             "clientREF" => $clientREF,
+//             "clientCompanyAddress" => $clientCompanyAddress,
+//             "natureOfBusiness" => $natureOfBusiness,
+//             "otherExpense" => $otherExpense,
+//             "companyName" => $companyName,
+//             "agentName" => $agentName,
+//             "agentSortCode" => $agentSortCode,
+//             "agentAccountNumber" => $agentAccountNumber
+//         ]);
 
-    $view = view('prints.investigations')
-        ->render();
+//     $view = view('prints.investigation_expense')
+//         ->render();
 
-    $pdf = new Pdf($view, "bla");
+//     $pdf = new Pdf($view, "bla");
 
-    return $pdf->download();
-});
+//     return $pdf->download();
+// });
 
 // Overpayment
 // Route::get('/', function () {
+//     $documentDate = (new \DateTime())->format("l, d F Y");
+//     $companyAddress = "Mr T McNally <br/>
+//                         Tommys Tax <br/>
+//                         Kingfisher House Business Centre <br/>
+//                         21-23 Elmfield Way <br/>
+//                         BROMLEY <br/>
+//                         BR1 1LT";
+
+//     $clientName = "Maurice Doherty";
+//     $clientUTR = "7902735721";
+//     $taxYear = "2017/18";
+//     $overpayment = "£1,237.00";
+//     $agentName = "My Tax Back ltd";
+//     $agentSortCode = "231470";
+//     $agentAccountNumber = "231470";
+
+//     return view('prints.overpayment')->with([
+//         "documentDate" => $documentDate,
+//         "companyAddress" => $companyAddress,
+//         "clientName" => $clientName,
+//         "clientUTR" => $clientUTR,
+//         "taxYear" => $taxYear,
+//         "overpayment" => $overpayment,
+//         "agentName" => $agentName,
+//         "agentSortCode" => $agentSortCode,
+//         "agentAccountNumber" => $agentAccountNumber
+//     ]);
+
 //     $view = view('prints.overpayment')
 //         ->render();
 
