@@ -114,7 +114,7 @@ class Pdf
 
         $pdfContent = $this->getContentFilePdf();
 
-        $this->destroy();
+        $this->fileDestroy();
 
         return response()->streamDownload(function () use ($pdfContent) {
             echo $pdfContent;
@@ -164,7 +164,7 @@ class Pdf
     /**
      * @return bool
      */
-    protected function destroy()
+    protected function fileDestroy()
     {
         try {
             if (file_exists($this->getHtmlFullPath())) {
@@ -187,16 +187,6 @@ class Pdf
     public function setToolPath($path)
     {
         $this->tool = $path;
-
-        return $this;
-    }
-    /**
-     * @param string $encoding
-     * @return $this
-     */
-    public function encoding($encoding)
-    {
-        $this->params[] = "--encoding '{$encoding}'";
 
         return $this;
     }

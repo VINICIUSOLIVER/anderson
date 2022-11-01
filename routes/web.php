@@ -28,7 +28,37 @@ use Illuminate\Support\Facades\Route;
 
 // Complaints
 Route::get('/', function () {
-    return view('prints.complaints');
+
+    $docuemntDate = (new \DateTime())->format("l, d F Y");
+    $companyAddress = "Mr T McNally <br/>
+                        Tommys Tax <br/>
+                        Kingfisher House Business Centre <br/>
+                        21-23 Elmfield Way <br/>
+                        BROMLEY <br/>
+                        BR1 1LT";
+    
+    $clientName = "Maurice Doherty";
+    $clientUTR = "7902735721";
+    $complaintDate = "22/12/2021";
+    $verificationDate = "11/01/2022";
+    $dates = [
+        "15/02/2022", 
+        "21/03/2022", 
+        "22/03/2022", 
+        "22/03/2022", 
+        "17/05/2022"
+    ];
+
+    return view('prints.complaints')->with([
+        "documentDate" => $docuemntDate,
+        "companyAddress" => $companyAddress,
+        "clientName" => $clientName,
+        "clientUTR" => $clientUTR,
+        "complaintDate" => $complaintDate,
+        "verificationDate" => $verificationDate,
+        "dates" => join($dates, ", ")
+    ]);
+
     $view = view('prints.complaints')
         ->render();
 
