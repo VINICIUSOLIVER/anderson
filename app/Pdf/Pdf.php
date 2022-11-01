@@ -73,33 +73,12 @@ class Pdf
         return $this;
     }
     /**
-     * @return string
-     * @throws \Exception
-     */
-    public function contents()
-    {
-        try {
-            $this->generate();
-            $contentsPdf = $this->getContentFilePdf();
-
-            $this->destroy();
-
-            if ($contentsPdf === "") {
-                throw new \Exception("Não foi possível ter acesso ao conteúdo do PDF.");
-            }
-
-            return $contentsPdf;
-        } catch (\Exception $e) {
-            throw $e;
-        }
-    }
-    /**
      * @throws \Exception
      */
     public function generate()
     {
         if (!$this->createHtmlFile()) {
-            throw new \Exception("Não foi possível criar o arquivo.", 500);
+            throw new \Exception("File generation failed.", 500);
         }
 
         $params = join($this->params, " ");
