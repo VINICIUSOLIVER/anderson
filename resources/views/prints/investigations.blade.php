@@ -30,9 +30,7 @@
 <table class="table-header">
     <tr>
         <td>
-            <span class="highlighting">
-                Friday, 20 June 2022
-            </span>
+            {{ $docuemntDate }}
         </td>
         <td></td>
     </tr>
@@ -46,12 +44,9 @@
         </td>
         <td>
             <p>
-                <span class="highlighting">Mr T McNally<span> <br><br>
-                <span class="highlighting">Tommys Tax<span> <br><br>
-                <span class="highlighting">Kingfisher House Business Centre<span> <br>
-                <span class="highlighting">21-23 Elmfield Way<span> <br>
-                <span class="highlighting">BROMLEY<span> <br><br>
-                <span class="highlighting">BR1 1LT<span>
+                @php
+                    print($companyAddress)
+                @endphp
             </p>
         </td>
     </tr>
@@ -65,11 +60,11 @@
                 <br><br>
                 Our client has instructed us to act on their behalf as agent in responding to the expenses
                 <br><br>
-                <span class="highlighting">Name</span>
+                {{ $clientName }}
                 <br>     
-                <span class="highlighting">UTR</span>
+                {{ $clientUTR }}
                 <br>    
-                <span class="highlighting">REF</span>
+                {{ $clientREF }}
                 <br><br>
                 To respond to the compliance letter, you sent to them. Requesting additional information.
                 <br><br> 
@@ -85,7 +80,7 @@
             1.
         </td>
         <td>
-            Company Address &nbsp;&nbsp;&nbsp; <span class="highlighting">Block 17 Lode Lane, Solihull, B92 8NW</span>
+            Company Address &nbsp;&nbsp;&nbsp; {{ $clientCompanyAddress }}
         </td>
     </tr>
     <tr>
@@ -94,7 +89,7 @@
             2.
         </td>
         <td>
-            Nature of business &nbsp;&nbsp;&nbsp; <span class="highlighting">Production Operative, overseeing the quality of the finished cars before they are despatched from the site.<span>
+            Nature of business &nbsp;&nbsp;&nbsp; {{ $natureOfBusiness }}
         </td>
     </tr>
     <tr>
@@ -103,7 +98,7 @@
             3.
         </td>
         <td>
-            Other expense claimed included <span class="highlighting">communication, technical devices broad band, stationary, working from home and specialist health and safety uniform with washing expenses, food when working outside of original hours.<span>
+            Other expense claimed included {{ $otherExpense }}
         </td>
     </tr>
     <tr>
@@ -121,7 +116,7 @@
             5.
         </td>
         <td>
-            Company name <span class="highlighting">_______________</span>
+            Company name {{ $companyName }}
         </td>
     </tr>
     <tr>
@@ -134,9 +129,9 @@
                 <br><br>
                 Here are our bank details below for the overpayment to be transferred 
                 <br><br>
-                <span class="highlighting">Tommys Tax</span>  <br>
-                <span class="highlighting">231470</span> <br>
-                <span class="highlighting">23317400 </span> <br><br>
+                {{ $bankAccountUsername }}  <br>
+                {{ $bankAccountAgencyNumber }} <br>
+                {{ $bankAccountNumber }} <br><br>
                 Kind regards
             </p>
         </td>
