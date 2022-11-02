@@ -23,13 +23,18 @@ class Pdf
     /**
      * @var array
      */
-    protected $params = [
-        "--encoding 'UTF-8'",
-        "--page-size A4",
+    protected $margins = [
         "--margin-bottom 25.4mm",
         "--margin-left 25.4mm",
         "--margin-right 25.4mm",
         "--margin-top 25.4mm"
+    ];
+    /**
+     * @var array
+     */
+    protected $params = [
+        "--encoding 'UTF-8'",
+        "--page-size A4"
     ];
     /**
      * @var string
@@ -81,7 +86,9 @@ class Pdf
             throw new \Exception("File generation failed.", 500);
         }
 
-        $params = join($this->params, " ");
+        $mergeParams = array_merge($this->params, $this->margins);
+
+        $params = join($mergeParams, " ");
         $execCommand = "{$this->tool} {$params} {$this->getHtmlFullPath()} {$this->getPdfFullPath()}";
 
         exec($execCommand);
@@ -166,6 +173,20 @@ class Pdf
     public function setToolPath($path)
     {
         $this->tool = $path;
+
+        return $this;
+    }
+    /**
+     * @return Pdf
+     */
+    public function margins($top, $right, $bottom, $left)
+    {
+        $this->margins = [
+            "--margin-bottom {$bottom}mm",
+            "--margin-left {$left}mm",
+            "--margin-right {$right}mm",
+            "--margin-top {$top}mm"
+        ];
 
         return $this;
     }

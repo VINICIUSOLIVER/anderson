@@ -11,15 +11,6 @@
         background-color: #ffff00;
     }
 
-    .paperSheet {
-        width: 21cm;
-        height: 29.7cm;
-        padding: 30mm 25.4mm 30mm 25.4mm; 
-        background-color: #fff;
-        border: solid 1px black;
-        box-sizing: content-box;
-    }
-
     .write-space {
         width: 30px;
     }
@@ -30,5 +21,9 @@
 
     .font-weight-bolder {
         font-weight: bolder !important;
+    }
+
+    .page-break {
+        page-break-after: always;
     }
 </style>

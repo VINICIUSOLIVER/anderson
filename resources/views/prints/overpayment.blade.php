@@ -206,7 +206,7 @@
         </tr>
     </table>
 
-    <div style="page-break-after: always;"></div>
+    <div class="page-break"></div>
 
     <table>
         <tr>

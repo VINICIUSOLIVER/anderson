@@ -14,17 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('prints.repayments');
+Route::get('/', function () {
+    $view = view('prints.repayment')
+        ->render();
 
-//     $view = view('prints.repayments')
-//         ->render();
+    $pdf = new Pdf($view, "bla");
+    $pdf->margins(10, 10, 10, 10);
 
-//     $pdf = new Pdf($view, "bla");
+    return $pdf->download();
 
-//     return $pdf->download();
-
-// });
+});
 
 // Complaints
 // Route::get('/', function () {
@@ -155,6 +154,16 @@ use Illuminate\Support\Facades\Route;
 //         ->render();
 
 //     $pdf = new Pdf($view, "bla");
+
+//     return $pdf->download();
+// });
+
+// Route::get('/', function () {
+//     $view = view('prints.repayment')
+//         ->render();
+
+//     $pdf = new Pdf($view, "bla");
+//     $pdf->margins(10, 10, 10, 10);
 
 //     return $pdf->download();
 // });
