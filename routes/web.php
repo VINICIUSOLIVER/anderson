@@ -15,7 +15,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $view = view('prints.repayment')
+    $taxRefence = "1326852530";
+    $fullName = "KEITH JASON PARR";
+    $nationalInsuranceNumber = "1326852530";
+    $addressLineOne = "Enter your details unless you're making this appeal on behalf of someone else. Then you should enter their details.";
+    $addressLineTwo = "Enter your details unless you're making this appeal on behalf of someone else. Then you should enter their details.";
+    $addressLineThree = "Enter your details unless you're making this appeal on behalf of someone else. Then you should enter their details.";
+    $addressLineFour = "Enter your details unless you're making this appeal on behalf of someone else. Then you should enter their details.";
+    $postcode = "58068243";
+
+    $view = view('prints.self_assessment')
+        ->with([
+            "taxRefence" => $taxRefence,
+            "fullName" => $fullName,
+            "nationalInsuranceNumber" => $nationalInsuranceNumber,
+            "addressLineOne" => $addressLineOne,
+            "addressLineTwo" => $addressLineTwo,
+            "addressLineThree" => $addressLineThree,
+            "addressLineFour" => $addressLineFour,
+            "postcode" => $postcode
+        ])
         ->render();
 
     $pdf = new Pdf($view, "bla");
